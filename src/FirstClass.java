@@ -12,7 +12,7 @@ public class FirstClass {
 				"6","7","8"
 		};
 		System.out.printf(
-				"%s|%s|%s"+"\n%s|%s|%s"+"\n%s|%s|%s\n", array);
+				"%s|%s|%s"+"\n%s|%s|%s"+"\n%s|%s|%s\n", (Object[]) array);
 		Boolean isX= true;
 		Scanner input= new Scanner(System.in);
 		/*void GameOver() {
@@ -20,17 +20,23 @@ public class FirstClass {
 		}*/
 
 		while (true) {
-			int num_in_Array= input.nextInt();
+			float num_in_Array_FLOAT= input.nextFloat();
+			int num_in_Array;
 			while (true) {
-				if (num_in_Array>8 || num_in_Array<0) {
-					System.out.printf("%s is NOT VALID TRY AGAIN: ", num_in_Array);
+				if (num_in_Array_FLOAT>8 || num_in_Array_FLOAT<0 ||num_in_Array_FLOAT%1!=0) {
+					if (num_in_Array_FLOAT%1==0) {
+						System.out.printf("%s is NOT VALID TRY AGAIN: ", (int) num_in_Array_FLOAT);
+					}
+					else {
+						System.out.printf("%s is NOT VALID TRY AGAIN: ", num_in_Array_FLOAT);						
+					}
 				}
-				else if (num_in_Array==99) {
+				else if (num_in_Array_FLOAT==99) {
 					//GameOver();
 					//CHECK!
 				}
 				else {
-				
+					num_in_Array = (int) num_in_Array_FLOAT;
 					if (array[num_in_Array].equals("X") || array[num_in_Array].equals("O")) {
 						System.out.printf("%s is TAKEN by %s TRY AGAIN: ", num_in_Array, array[num_in_Array]);											
 					}
@@ -38,7 +44,7 @@ public class FirstClass {
 						break;
 					}
 				}
-				num_in_Array= input.nextInt();
+				num_in_Array_FLOAT= input.nextFloat();
 			}
 			if (isX) {
 				array[num_in_Array] ="X";
@@ -49,7 +55,7 @@ public class FirstClass {
 				isX=true;
 				}
 			System.out.printf(
-					"%s|%s|%s"+"\n%s|%s|%s"+"\n%s|%s|%s\n", array);
+					"%s|%s|%s"+"\n%s|%s|%s"+"\n%s|%s|%s\n", (Object[]) array);
 			if (num_in_Array == -1)
 			{
 				break;
