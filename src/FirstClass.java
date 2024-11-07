@@ -27,6 +27,7 @@ public class FirstClass {
 				}
 				else if (num_in_Array==99) {
 					//GameOver();
+					//CHECK!
 				}
 				else {
 				
