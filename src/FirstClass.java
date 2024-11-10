@@ -5,7 +5,6 @@ public class FirstClass {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String[] array = {
 				"0","1","2",
 				"3","4","5",
@@ -25,10 +24,10 @@ public class FirstClass {
 			while (true) {
 				if (num_in_Array_FLOAT>8 || num_in_Array_FLOAT<0 ||num_in_Array_FLOAT%1!=0) {
 					if (num_in_Array_FLOAT%1==0) {
-						System.out.printf("%s is NOT VALID TRY AGAIN: ", (int) num_in_Array_FLOAT);
+						System.out.printf("%d is NOT VALID TRY AGAIN: ", (int) num_in_Array_FLOAT);
 					}
 					else {
-						System.out.printf("%s is NOT VALID TRY AGAIN: ", num_in_Array_FLOAT);						
+						System.out.printf("%.2f is NOT VALID TRY AGAIN: ", num_in_Array_FLOAT);					
 					}
 				}
 				else if (num_in_Array_FLOAT==99) {
